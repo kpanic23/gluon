@@ -41,7 +41,7 @@ Flash instruction under U-Boot, using UART:
 Signed-off-by: Felix Fietkau <nbd@nbd.name>
 
 diff --git a/target/linux/ar71xx/base-files/etc/board.d/01_leds b/target/linux/ar71xx/base-files/etc/board.d/01_leds
-index e67b5e38561e841b88e486341950c52e1d454322..44b1c2837e8392596eed14b4bc0d761042109715 100755
+index e1efb561b33da4dcfcb82ee953cd888170476dfb..6cec889e706eeea884b8cef3ec7cc34a59f6955b 100755
 --- a/target/linux/ar71xx/base-files/etc/board.d/01_leds
 +++ b/target/linux/ar71xx/base-files/etc/board.d/01_leds
 @@ -53,7 +53,8 @@ ap121f)
@@ -68,10 +68,10 @@ index e67b5e38561e841b88e486341950c52e1d454322..44b1c2837e8392596eed14b4bc0d7610
  arduino-yun)
  	ucidef_set_led_wlan "wlan" "WLAN" "arduino:blue:wlan" "phy0tpt"
 diff --git a/target/linux/ar71xx/base-files/etc/board.d/02_network b/target/linux/ar71xx/base-files/etc/board.d/02_network
-index 27a0266923743d4856919b9c8772a40e59febe83..b8452d79cb7f0f856f60ad3050cc9627d2536213 100755
+index 24ead87850f13346ea4be4f9bfb5582e64a2c4ad..9816cbb448d10284192e702067b63465793ad0af 100755
 --- a/target/linux/ar71xx/base-files/etc/board.d/02_network
 +++ b/target/linux/ar71xx/base-files/etc/board.d/02_network
-@@ -380,6 +380,7 @@ ar71xx_setup_interfaces()
+@@ -379,6 +379,7 @@ ar71xx_setup_interfaces()
  		ucidef_set_interface_wan "eth0"
  		ucidef_set_interface_raw "wlan" "wlan0" "dhcp"
  		;;
@@ -80,7 +80,7 @@ index 27a0266923743d4856919b9c8772a40e59febe83..b8452d79cb7f0f856f60ad3050cc9627
  	tl-wr1041n-v2)
  		ucidef_add_switch "switch0" \
 diff --git a/target/linux/ar71xx/base-files/etc/diag.sh b/target/linux/ar71xx/base-files/etc/diag.sh
-index 61db387c9ecefd7090c25a5f5d75fdbf65a44d65..97372bed0ea2fadfab10f22916a1e0d6a9c65725 100644
+index 38cc5d7853c79f2a7800a387310a95abb3b4de1b..1d3a1fffaa0698c7fbf059d33143395bbf10b8d3 100644
 --- a/target/linux/ar71xx/base-files/etc/diag.sh
 +++ b/target/linux/ar71xx/base-files/etc/diag.sh
 @@ -51,6 +51,7 @@ get_status_led() {
@@ -104,7 +104,7 @@ index 68f90de802ddd18e09a1da39c0d56292eea9489c..96b8f6b9a4bdd6a1609a819e72ade315
  	tl-wdr6500-v2)
  		ath10kcal_extract "art" 20480 2116
 diff --git a/target/linux/ar71xx/base-files/lib/ar71xx.sh b/target/linux/ar71xx/base-files/lib/ar71xx.sh
-index de6042b202bbd07e64833743933be1cbaf1ed495..ddb8f0db80ed6eab39c832bfd893182d9f591ad4 100755
+index 46711af2b26159ebb105fa97cd8a85bb9c00911a..9805c38de215453ce56ca312f4a92b32af092890 100755
 --- a/target/linux/ar71xx/base-files/lib/ar71xx.sh
 +++ b/target/linux/ar71xx/base-files/lib/ar71xx.sh
 @@ -466,6 +466,9 @@ ar71xx_board_detect() {
@@ -118,7 +118,7 @@ index de6042b202bbd07e64833743933be1cbaf1ed495..ddb8f0db80ed6eab39c832bfd893182d
  		name="archer-c7"
  		;;
 diff --git a/target/linux/ar71xx/base-files/lib/upgrade/platform.sh b/target/linux/ar71xx/base-files/lib/upgrade/platform.sh
-index e748a2559cdb3a0ca6618429b0f613a656e39388..d414af969912894574e73e286ed5a3998532d34e 100755
+index e65f6e2f7594ba373fbc9a26620859b9005c8532..279b93aecc26e597be6a6bb02e0a7deb918cd29a 100755
 --- a/target/linux/ar71xx/base-files/lib/upgrade/platform.sh
 +++ b/target/linux/ar71xx/base-files/lib/upgrade/platform.sh
 @@ -207,6 +207,7 @@ platform_check_image() {
@@ -130,7 +130,7 @@ index e748a2559cdb3a0ca6618429b0f613a656e39388..d414af969912894574e73e286ed5a399
  	c-55|\
  	carambola2|\
 diff --git a/target/linux/ar71xx/files/arch/mips/ath79/Kconfig.openwrt b/target/linux/ar71xx/files/arch/mips/ath79/Kconfig.openwrt
-index 7ad5419f51ec9909d8b59f33178221a7d81ec184..0a25294c40b5e2d3be825554ec7246a50b9c029b 100644
+index fb2afb965c4641df7cdcaf0920f2d56b3717fa9b..2705aced46275a295b5b2f6fbc68e224c9b1092a 100644
 --- a/target/linux/ar71xx/files/arch/mips/ath79/Kconfig.openwrt
 +++ b/target/linux/ar71xx/files/arch/mips/ath79/Kconfig.openwrt
 @@ -1247,6 +1247,7 @@ config ATH79_MACH_ARCHER_C25_V1
@@ -420,7 +420,7 @@ index 0000000000000000000000000000000000000000..64955c79945c0b2c28d5a93be6e45662
 +MIPS_MACHINE(ATH79_MACH_ARCHER_C7_V4, "ARCHER-C7-V4", "TP-LINK Archer C7 v4",
 +	     archer_c7_v4_setup);
 diff --git a/target/linux/ar71xx/files/arch/mips/ath79/machtypes.h b/target/linux/ar71xx/files/arch/mips/ath79/machtypes.h
-index 9cb4a7f2e1df641232289721b676a9b0149c76e5..e4623fd08836d59ad4e79e96f02e75e502a55ca6 100644
+index 8864e0deda57b926e88dceebd26056a2f8099380..e34265630bb63d47ba8ea3677ac9c97b3f5b7cec 100644
 --- a/target/linux/ar71xx/files/arch/mips/ath79/machtypes.h
 +++ b/target/linux/ar71xx/files/arch/mips/ath79/machtypes.h
 @@ -44,6 +44,7 @@ enum ath79_mach_type {
@@ -432,7 +432,7 @@ index 9cb4a7f2e1df641232289721b676a9b0149c76e5..e4623fd08836d59ad4e79e96f02e75e5
  	ATH79_MACH_AW_NR580,			/* AzureWave AW-NR580 */
  	ATH79_MACH_BHR_4GRV2,			/* Buffalo BHR-4GRV2 */
 diff --git a/target/linux/ar71xx/image/tp-link.mk b/target/linux/ar71xx/image/tp-link.mk
-index 5be7cbfbd4ab7d73d679d52d2581459250e04302..27d6c73454aef96e5da47033ec664d2caffca1d5 100644
+index 6933654e575a1ef2c92e4c656696a479cba4c594..3bd8180cbd07580884cfc1657c4d0297a1329c21 100644
 --- a/target/linux/ar71xx/image/tp-link.mk
 +++ b/target/linux/ar71xx/image/tp-link.mk
 @@ -298,6 +298,22 @@ define Device/archer-c7-v2
@@ -468,66 +468,70 @@ index 5be7cbfbd4ab7d73d679d52d2581459250e04302..27d6c73454aef96e5da47033ec664d2c
  define Device/tl-mr10u-v1
      $(Device/tplink-4mlzma)
 diff --git a/tools/firmware-utils/src/tplink-safeloader.c b/tools/firmware-utils/src/tplink-safeloader.c
-index 478d5d8e9b43bbe37694732c138048c8fe8d807c..fec830c23ce6707755ddefc849f195872be1e877 100644
+index 24684268b1a3fe491c4eb876a5ebefc700f2e56e..8334e2dd1684552c9276e585e3d71d53173a3b8b 100644
 --- a/tools/firmware-utils/src/tplink-safeloader.c
 +++ b/tools/firmware-utils/src/tplink-safeloader.c
-@@ -376,6 +376,49 @@ static struct device_info boards[] = {
+@@ -376,6 +376,50 @@ static struct device_info boards[] = {
  		.last_sysupgrade_partition = "file-system"
  	},
  
-+	/** Firmware layout for the C7 */
-+	{
-+		.id = "ARCHER-C7-V4",
-+		.support_list =
-+			"SupportList:\n"
-+			"{product_name:Archer C7,product_ver:4.0.0,special_id:45550000}\n"
-+			"{product_name:Archer C7,product_ver:4.0.0,special_id:55530000}\n"
-+			"{product_name:Archer C7,product_ver:4.0.0,special_id:43410000}\n",
-+		.support_trail = '\x00',
-+		.soft_ver = "soft_ver:1.0.0\n",
-+
-+		/**
-+		    We use a bigger os-image partition than the stock images (and thus
-+		    smaller file-system), as our kernel doesn't fit in the stock firmware's
-+		    1MB os-image.
-+		*/
-+		.partitions = {
-+			{"factory-boot", 0x00000, 0x20000},
-+			{"fs-uboot", 0x20000, 0x20000},
-+			{"os-image", 0x40000, 0x180000},	/* Stock: base 0x40000 size 0x120000 */
-+			{"file-system", 0x1c0000, 0xd40000},	/* Stock: base 0x160000 size 0xda0000 */
-+			{"default-mac", 0xf00000, 0x00200},
-+			{"pin", 0xf00200, 0x00200},
-+			{"device-id", 0xf00400, 0x00100},
-+			{"product-info", 0xf00500, 0x0fb00},
-+			{"soft-version", 0xf10000, 0x00100},
-+			{"extra-para", 0xf11000, 0x01000},
-+			{"support-list", 0xf12000, 0x0a000},
-+			{"profile", 0xf1c000, 0x04000},
-+			{"default-config", 0xf20000, 0x10000},
-+			{"user-config", 0xf30000, 0x40000},
-+			{"qos-db", 0xf70000, 0x40000},
-+			{"certificate", 0xfb0000, 0x10000},
-+			{"partition-table", 0xfc0000, 0x10000},
-+			{"log", 0xfd0000, 0x20000},
-+			{"radio", 0xff0000, 0x10000},
-+			{NULL, 0, 0}
-+		},
-+
-+		.first_sysupgrade_partition = "os-image",
-+		.last_sysupgrade_partition = "file-system",
-+	},
++  	/** Firmware layout for the C7 */
++   	{
++   		.id = "ARCHER-C7-V4",
++   		.support_list =
++   			"SupportList:\n"
++   			"{product_name:Archer C7,product_ver:4.0.0,special_id:45550000}\n"
++   			"{product_name:Archer C7,product_ver:4.0.0,special_id:55530000}\n"
++   			"{product_name:Archer C7,product_ver:4.0.0,special_id:43410000}\n",
++   		.support_trail = '\x00',
++   		.soft_ver = "soft_ver:1.0.0\n",
++   
++   		/**
++   		    We use a bigger os-image partition than the stock images (and thus
++   		    smaller file-system), as our kernel doesn't fit in the stock firmware's
++   		    1MB os-image.
++   		*/
++   		.partitions = {
++   			{"factory-boot", 0x00000, 0x20000},
++   			{"fs-uboot", 0x20000, 0x20000},
++   			{"os-image", 0x40000, 0x180000},	/* Stock: base 0x40000 size 0x120000 */
++   			{"file-system", 0x1c0000, 0xd40000},	/* Stock: base 0x160000 size 0xda0000 */
++   			{"default-mac", 0xf00000, 0x00200},
++   			{"pin", 0xf00200, 0x00200},
++   			{"device-id", 0xf00400, 0x00100},
++   			{"product-info", 0xf00500, 0x0fb00},
++   			{"soft-version", 0xf10000, 0x00100},
++   			{"extra-para", 0xf11000, 0x01000},
++   			{"support-list", 0xf12000, 0x0a000},
++   			{"profile", 0xf1c000, 0x04000},
++   			{"default-config", 0xf20000, 0x10000},
++   			{"user-config", 0xf30000, 0x40000},
++   			{"qos-db", 0xf70000, 0x40000},
++   			{"certificate", 0xfb0000, 0x10000},
++   			{"partition-table", 0xfc0000, 0x10000},
++   			{"log", 0xfd0000, 0x20000},
++   			{"radio", 0xff0000, 0x10000},
++   			{NULL, 0, 0}
++   		},
++   
++   		.first_sysupgrade_partition = "os-image",
++   		.last_sysupgrade_partition = "file-system",
++   	},
++   
 +
  	/** Firmware layout for the C9 */
  	{
  		.id = "ARCHERC9",
-@@ -929,6 +972,9 @@ static void build_image(const char *output,
- 	    strcasecmp(info->id, "TLWR1043NV5") == 0) {
+@@ -891,7 +935,11 @@ static void build_image(const char *output,
+ 	if (strcasecmp(info->id, "ARCHER-C25-V1") == 0) {
  		const char mdat[11] = {0x00, 0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00};
  		parts[5] = put_data("extra-para", mdat, 11);
-+	} else if (strcasecmp(info->id, "ARCHER-C7-V4") == 0) {
-+		const char mdat[11] = {0x01, 0x00, 0x00, 0x02, 0x00, 0x00, 0xca, 0x00, 0x01, 0x00, 0x00};
-+		parts[5] = put_data("extra-para", mdat, 11);
- 	}
+-	}
++        } else if (strcasecmp(info->id, "ARCHER-C7-V4") == 0) {
++	        const char mdat[11] = {0x01, 0x00, 0x00, 0x02, 0x00, 0x00, 0xca, 0x00, 0x01, 0x00, 0x00};
++                parts[5] = put_data("extra-para", mdat, 11);
++        }
++	        
  
  	size_t len;
+ 	void *image;

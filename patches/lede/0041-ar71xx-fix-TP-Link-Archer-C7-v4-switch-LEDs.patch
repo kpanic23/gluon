@@ -7,7 +7,7 @@ This fixes wrong switch LEDs on TP-Link Archer C7 v4.
 Signed-off-by: David Bauer <mail@david-bauer.net>
 
 diff --git a/target/linux/ar71xx/base-files/etc/board.d/01_leds b/target/linux/ar71xx/base-files/etc/board.d/01_leds
-index 44b1c2837e8392596eed14b4bc0d761042109715..47b90d9cb2f81936aed22cdf7d1f6d870d23c16e 100755
+index 6cec889e706eeea884b8cef3ec7cc34a59f6955b..a061310a3b675a28de5ea6f8a4fc33ec2c708c67 100755
 --- a/target/linux/ar71xx/base-files/etc/board.d/01_leds
 +++ b/target/linux/ar71xx/base-files/etc/board.d/01_leds
 @@ -53,8 +53,7 @@ ap121f)
