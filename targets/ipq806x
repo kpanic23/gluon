@@ -6,5 +6,5 @@ fi
 
 # TP-Link
 
-device tp-link-archer-c2600 C2600
+device tp-link-archer-c2600 tplink_c2600
 packages $ATH10K_PACKAGES

@@ -1,0 +1,27 @@
+From: Hauke Mehrtens <hauke@hauke-m.de>
+Date: Mon, 16 Apr 2018 00:54:58 +0200
+Subject: ath10k-ct: make it depend on PCI support again
+
+The missing dependency causes build problems on systems without PCI
+support.
+The ath10k_pci kernel module depends on PCI support so this dependency
+should be added. ath10k now also supported the ahb interface on the
+IPQ4019 SoC, but this SoC also has PCI support so this extra dependency
+is not as problem.
+
+Fixes: d0f3dd5b9f34176 ("ath10k-ct: update to latest version, enable AHB.")
+Signed-off-by: Hauke Mehrtens <hauke@hauke-m.de>
+
+diff --git a/package/kernel/ath10k-ct/Makefile b/package/kernel/ath10k-ct/Makefile
+index 1725bb7d173fe5ac6d92b35c68ecd7a231348c59..9c69dee72f6449ef36199f727f9fa851986694a6 100644
+--- a/package/kernel/ath10k-ct/Makefile
++++ b/package/kernel/ath10k-ct/Makefile
+@@ -29,7 +29,7 @@ include $(INCLUDE_DIR)/package.mk
+ define KernelPackage/ath10k-ct
+   SUBMENU:=Wireless Drivers
+   TITLE:=ath10k-ct driver optimized for CT ath10k firmware
+-  DEPENDS:=+kmod-mac80211 +kmod-ath +@DRIVER_11N_SUPPORT +@DRIVER_11AC_SUPPORT +@DRIVER_11W_SUPPORT +kmod-hwmon-core
++  DEPENDS:=+kmod-mac80211 +kmod-ath +@DRIVER_11N_SUPPORT +@DRIVER_11AC_SUPPORT +@DRIVER_11W_SUPPORT @PCI_SUPPORT +kmod-hwmon-core
+   FILES:=\
+ 	$(PKG_BUILD_DIR)/ath10k$(CT_KVER)/ath10k_pci.ko \
+ 	$(PKG_BUILD_DIR)/ath10k$(CT_KVER)/ath10k_core.ko
