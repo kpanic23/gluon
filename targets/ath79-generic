@@ -249,6 +249,13 @@ device('netgear-wndrmac-v2', 'netgear_wndrmac-v2', {
 	factory_ext = '.img',
 })
 
+device('netgear-wndap360', 'netgear_wndap360', {
+	factory = false,
+	class = 'tiny',
+	packages = {'kmod-owl-loader',},
+})
+
+
 -- OCEDO
 
 device('ocedo-koala', 'ocedo_koala', {
