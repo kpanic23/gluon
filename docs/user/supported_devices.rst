@@ -85,6 +85,7 @@ ath79-generic
   - WNDR3800
   - WNR2200 (8M, 16M)
   - WNDRMAC (v2)
+  - WNDAP360
 
 * OCEDO
 

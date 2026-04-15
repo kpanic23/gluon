@@ -1,0 +1,29 @@
+From: David Lutz <kpanic@kpanicroom.de>
+Date: Wed, 15 Apr 2026 18:03:47 +0200
+Subject: ath79: netgear-wndap360: Fix PLL for Ethernet
+
+diff --git a/target/linux/ath79/dts/ar7161_netgear_wndap360.dts b/target/linux/ath79/dts/ar7161_netgear_wndap360.dts
+index 2acdba1c86de5aa0cef1702f00186477adf8d98a..5771a47962daa9a2d921bd12d0f8570bee32dbce 100644
+--- a/target/linux/ath79/dts/ar7161_netgear_wndap360.dts
++++ b/target/linux/ath79/dts/ar7161_netgear_wndap360.dts
+@@ -10,6 +10,11 @@
+ 	compatible = "netgear,wndap360", "qca,ar7161";
+ 	model = "Netgear WNDAP360";
+ 
++	chosen {
++		bootargs = "console=ttyS0,9600";
++	};
++
++
+ 	aliases {
+ 		led-boot = &led_power_orange;
+ 		led-failsafe = &led_power_orange;
+@@ -70,6 +75,8 @@
+ 
+ 	nvmem-cells = <&macaddr_art_0>;
+ 	nvmem-cell-names = "mac-address";
++
++	pll-data = <0x11110000 0x00001099 0x00991099>;
+ };
+ 
+ &spi {
